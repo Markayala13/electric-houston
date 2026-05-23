@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /.claude/
+Disallow: /.playwright-cli/
+Disallow: /claude-webkit/
+
+Sitemap: https://pandselectricservicesllc.com/sitemap.xml
