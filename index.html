@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P&S Electric Services | Houston's Premier Electrician & HVAC</title>
+<meta name="description" content="Licensed & insured electrical and HVAC services in Houston, TX. Panel upgrades, wiring, AC repair, HVAC installation. Available 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B3A5C;--navy-dark:#0F2137;--navy-mid:#162E4A;
+  --orange:#F5A623;--gold:#FFD700;--amber:#E8941A;
+  --white:#FFF;--off-white:#F7F8FB;--cream:#FDF8F0;
+  --text-dark:#1B2537;--text-body:#4A5568;--text-light:#8892A0;
+  --grad-brand:linear-gradient(135deg,#F5A623,#FFD700);
+  --grad-navy:linear-gradient(135deg,#0a1628 0%,#1B3A5C 40%,#0F2137 100%);
+  --shadow-soft:0 8px 40px rgba(27,58,92,.08);
+  --shadow-strong:0 20px 60px rgba(15,33,55,.15);
+  --ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(0,.7,.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Outfit',sans-serif;line-height:1.1;font-weight:800}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+
+/* ===== UTILITIES ===== */
+.container{max-width:1320px;margin:0 auto;padding:0 32px}
+.label{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.label::before{content:'';width:36px;height:2px;background:var(--grad-brand)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;border-radius:60px;font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;transition:all .35s var(--ease);cursor:pointer}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn-glow{background:var(--grad-brand);color:var(--navy-dark);box-shadow:0 4px 25px rgba(245,166,35,.4),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-glow:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(245,166,35,.55)}
+.btn-glass{background:rgba(255,255,255,.08);color:var(--white);border:1.5px solid rgba(255,255,255,.2);backdrop-filter:blur(10px)}
+.btn-glass:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:var(--white);box-shadow:0 6px 24px rgba(15,33,55,.25)}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-3px);box-shadow:0 12px 36px rgba(15,33,55,.35)}
+.btn-white{background:var(--white);color:var(--navy);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+
+/* ===== HEADER ===== */
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;transition:all .4s var(--ease);padding:14px 0;background:var(--white);box-shadow:0 1px 20px rgba(27,58,92,.06)}
+.header.scrolled{padding:8px 0;box-shadow:0 2px 30px rgba(27,58,92,.1)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo img{height:56px;width:auto;object-fit:contain;transition:all .3s var(--ease)}
+.header.scrolled .logo img{height:44px}
+.h-right{display:flex;align-items:center;gap:16px}
+nav{display:flex;gap:32px}
+nav a{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--text-dark);letter-spacing:.5px;transition:all .3s var(--ease);position:relative;padding:4px 0}
+nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2.5px;background:var(--grad-brand);border-radius:4px;transition:width .3s var(--ease)}
+nav a:hover{color:var(--orange)}
+nav a:hover::after{width:100%}
+.h-phone{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--navy);padding:12px 28px;border-radius:60px;background:rgba(27,58,92,.04);border:1.5px solid rgba(27,58,92,.1);transition:all .3s var(--ease)}
+.h-phone:hover{background:var(--orange);color:var(--navy-dark);border-color:var(--orange);transform:scale(1.03)}
+.h-phone svg{width:16px;height:16px}
+/* Language switcher */
+.lang{display:flex;border-radius:60px;overflow:hidden;border:1.5px solid rgba(27,58,92,.1);background:rgba(27,58,92,.03)}
+.lang-btn{padding:7px 14px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:var(--text-light);cursor:pointer;transition:all .3s var(--ease);border:none;background:none;letter-spacing:.5px}
+.lang-btn.on{background:var(--grad-brand);color:var(--navy-dark)}
+.burger{display:none;padding:6px;z-index:101}
+.burger span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:4px;transition:all .3s var(--ease)}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile drawer */
+.drawer-bg{position:fixed;inset:0;background:rgba(10,22,40,.6);z-index:98;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-bg.on{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:0;width:min(88vw,360px);height:100%;background:var(--navy-dark);z-index:99;transform:translateX(100%);transition:transform .4s var(--ease-out);padding:0 0 40px;display:flex;flex-direction:column;overflow-y:auto}
+.drawer.on{transform:translateX(0)}
+.drawer-top{background:linear-gradient(135deg,var(--navy),var(--navy-dark));padding:56px 32px 28px;border-bottom:3px solid var(--orange);display:flex;align-items:center;justify-content:space-between}
+.drawer-top img{height:44px;width:auto;object-fit:contain}
+.drawer-links{padding:16px 32px;flex:1}
+.drawer-links a{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,.7);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.06);display:block;transition:all .25s var(--ease)}
+.drawer-links a:hover{color:var(--orange);padding-left:8px}
+.drawer-bottom{padding:0 32px;margin-top:auto;display:flex;flex-direction:column;gap:12px}
+.drawer-call{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:800;font-size:16px;color:var(--navy-dark);background:var(--grad-brand);padding:16px;border-radius:14px;transition:all .3s var(--ease)}
+.drawer-call:hover{transform:scale(1.02)}
+.drawer-wa{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--white);background:#25D366;padding:16px;border-radius:14px;transition:all .3s var(--ease)}
+.drawer-wa:hover{background:#20BD5A;transform:scale(1.02)}
+.drawer-wa svg,.drawer-call svg{width:20px;height:20px;flex-shrink:0}
+/* Floating WhatsApp */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s var(--ease);animation:waPulse 2.5s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+.wa-float svg{width:30px;height:30px;color:var(--white)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 10px rgba(37,211,102,.1)}}
+/* WhatsApp CTA button */
+.btn-wa{background:#25D366;color:var(--white);box-shadow:0 4px 20px rgba(37,211,102,.3)}
+.btn-wa:hover{background:#20BD5A;transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,.4)}
+.btn-wa svg{width:20px;height:20px}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a1628}
+.hero-bg{position:absolute;inset:0}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:rgba(10,22,40,.72);background:linear-gradient(180deg,rgba(10,22,40,.78) 0%,rgba(10,22,40,.6) 40%,rgba(10,22,40,.8) 100%)}
+.hero-mesh{position:absolute;inset:0;z-index:1;background-image:
+  radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:4px 4px;pointer-events:none}
+.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;z-index:2}
+.hero-bg .orb-1{width:700px;height:700px;background:rgba(27,58,92,.7);top:-200px;right:-100px;animation:orbMove 18s ease-in-out infinite}
+.hero-bg .orb-2{width:500px;height:500px;background:rgba(245,166,35,.12);bottom:-150px;left:-100px;animation:orbMove 22s ease-in-out infinite reverse}
+.hero-bg .orb-3{width:300px;height:300px;background:rgba(255,215,0,.08);top:30%;left:40%;animation:orbMove 15s ease-in-out infinite 3s}
+@keyframes orbMove{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-60px)}66%{transform:translate(-30px,40px)}}
+.hero-grid-bg{position:absolute;inset:0;z-index:2;background-image:
+  linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:80px 80px}
+.hero .container{position:relative;z-index:3;padding-top:140px;padding-bottom:100px}
+.hero-top{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+.hero-dot{width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-tag{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--orange);letter-spacing:3px;text-transform:uppercase}
+.hero-headline{margin-bottom:36px}
+.hero-headline h1{font-size:clamp(48px,7.5vw,96px);color:var(--white);letter-spacing:-.04em;font-weight:900}
+.hero-headline .stroke{-webkit-text-stroke:2px rgba(255,255,255,.35);color:transparent;display:block}
+.hero-headline .highlight{color:var(--orange);position:relative}
+.hero-sub{font-size:clamp(17px,2vw,21px);color:rgba(255,255,255,.55);line-height:1.7;max-width:560px;margin-bottom:44px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:60px}
+.hero-photos{display:flex;gap:20px;align-items:flex-end}
+.hero-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.4);border:2px solid rgba(255,255,255,.08);transition:transform .5s var(--ease)}
+.hero-photo:hover{transform:translateY(-8px) scale(1.02)}
+.hero-photo:nth-child(1){width:200px;height:280px}
+.hero-photo:nth-child(2){width:180px;height:240px}
+.hero-photo:nth-child(3){width:160px;height:200px}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-bottom{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:end}
+.hero-badges{display:flex;gap:32px}
+.hero-badge-item{display:flex;align-items:center;gap:10px}
+.hero-badge-icon{width:42px;height:42px;border-radius:12px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);display:flex;align-items:center;justify-content:center}
+.hero-badge-icon svg{width:20px;height:20px;color:var(--orange)}
+.hero-badge-text{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);line-height:1.4}
+.hero-badge-text strong{display:block;color:var(--white);font-family:'Outfit',sans-serif;font-size:15px}
+
+/* ===== MARQUEE ===== */
+.marquee{background:var(--grad-brand);padding:18px 0;overflow:hidden;position:relative;z-index:10}
+.marquee-track{display:flex;gap:0;animation:scroll 25s linear infinite;width:max-content}
+.marquee-item{display:flex;align-items:center;gap:24px;padding:0 24px;white-space:nowrap;font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;color:var(--navy-dark);text-transform:uppercase;letter-spacing:2px}
+.marquee-item svg{width:20px;height:20px;color:var(--navy-dark);opacity:.5;flex-shrink:0}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== STATS ===== */
+.stats{padding:0 32px;margin-top:-48px;position:relative;z-index:11}
+.stats-bar{max-width:1100px;margin:0 auto;background:var(--white);border-radius:24px;box-shadow:var(--shadow-strong);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.stat{text-align:center;padding:44px 24px;position:relative;transition:background .3s var(--ease)}
+.stat:hover{background:var(--cream)}
+.stat:not(:last-child)::after{content:'';position:absolute;right:0;top:30%;height:40%;width:1px;background:linear-gradient(transparent,#e2e8f0,transparent)}
+.stat-num{font-family:'Outfit',sans-serif;font-size:clamp(36px,5vw,54px);font-weight:900;color:var(--navy);line-height:1}
+.stat-num .plus{color:var(--orange)}
+.stat-text{font-size:13px;font-weight:600;color:var(--text-light);margin-top:6px;letter-spacing:.5px;text-transform:uppercase}
+
+/* ===== ABOUT ===== */
+.about{padding:140px 0 120px;position:relative;overflow:hidden}
+.about-deco{position:absolute;right:-80px;top:100px;width:400px;height:400px;border-radius:50%;border:60px solid var(--cream);opacity:.6}
+.about .container{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.about-visual{position:relative}
+.about-img-1{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-strong);aspect-ratio:3/4;position:relative;z-index:2}
+.about-img-1 img{width:100%;height:100%;object-fit:cover}
+.about-img-2{position:absolute;bottom:-40px;right:-40px;width:60%;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-strong);border:6px solid var(--white);z-index:3;aspect-ratio:4/3}
+.about-img-2 img{width:100%;height:100%;object-fit:cover}
+.about-accent{position:absolute;top:-30px;left:-30px;z-index:4}
+.about-accent-inner{background:var(--grad-brand);border-radius:20px;padding:24px 32px;box-shadow:0 12px 35px rgba(245,166,35,.3)}
+.about-accent-num{font-family:'Outfit',sans-serif;font-size:52px;font-weight:900;color:var(--navy-dark);line-height:1}
+.about-accent-label{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--navy-dark);text-transform:uppercase;letter-spacing:1px}
+.about-content .label{color:var(--orange);margin-bottom:20px}
+.about-content h2{font-size:clamp(32px,4vw,48px);color:var(--navy);margin-bottom:28px;letter-spacing:-.02em}
+.about-content p{font-size:17px;color:var(--text-body);line-height:1.85;margin-bottom:20px}
+.about-pills{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 40px}
+.about-pill{display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:60px;background:var(--off-white);border:1px solid #e8ecf2;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--navy);transition:all .3s var(--ease)}
+.about-pill:hover{background:var(--cream);border-color:var(--orange);transform:translateY(-2px)}
+.about-pill svg{width:18px;height:18px;color:var(--orange)}
+
+/* ===== SERVICES ===== */
+.services{padding:120px 0;background:var(--navy-dark);position:relative;overflow:hidden;clip-path:polygon(0 40px,100% 0,100% calc(100% - 40px),0 100%);margin:-1px 0}
+.services::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(245,166,35,.04);right:-200px;top:-200px}
+.services .container{padding-top:40px;padding-bottom:40px}
+.services-head{margin-bottom:64px}
+.services-head .label{color:var(--gold)}
+.services-head h2{font-size:clamp(32px,4.5vw,52px);color:var(--white);margin-top:16px;letter-spacing:-.02em}
+.services-head p{color:rgba(255,255,255,.5);font-size:17px;margin-top:16px;max-width:540px;line-height:1.7}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.srv-card{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;cursor:default;group:true}
+.srv-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.srv-card:hover img{transform:scale(1.08)}
+.srv-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.95) 0%,rgba(10,22,40,.4) 50%,rgba(10,22,40,.2) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;transition:all .4s var(--ease)}
+.srv-card:hover .srv-overlay{background:linear-gradient(to top,rgba(10,22,40,.97) 0%,rgba(10,22,40,.6) 60%,rgba(10,22,40,.3) 100%)}
+.srv-icon{width:52px;height:52px;border-radius:14px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.25);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:all .3s var(--ease)}
+.srv-card:hover .srv-icon{background:var(--grad-brand);border-color:var(--orange)}
+.srv-icon svg{width:26px;height:26px;color:var(--orange);transition:color .3s var(--ease)}
+.srv-card:hover .srv-icon svg{color:var(--navy-dark)}
+.srv-card h3{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:8px}
+.srv-card p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;max-height:0;overflow:hidden;transition:all .4s var(--ease);opacity:0}
+.srv-card:hover p{max-height:100px;opacity:1;margin-top:4px}
+.srv-tag{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2px}
+
+/* ===== GALLERY ===== */
+.gallery{padding:120px 0;background:var(--white)}
+.gallery-head{text-align:center;margin-bottom:48px}
+.gallery-head .label{color:var(--orange)}
+.gallery-head h2{font-size:clamp(32px,4.5vw,52px);color:var(--navy);margin-top:16px;letter-spacing:-.02em}
+.gallery-head p{color:var(--text-body);font-size:17px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.gal-filters{display:flex;justify-content:center;gap:8px;margin-bottom:48px;flex-wrap:wrap}
+.gal-f{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;padding:10px 26px;border-radius:60px;color:var(--text-body);background:var(--off-white);border:1.5px solid transparent;transition:all .3s var(--ease);cursor:pointer}
+.gal-f.on,.gal-f:hover{color:var(--navy-dark);background:var(--grad-brand);border-color:var(--orange);box-shadow:0 4px 16px rgba(245,166,35,.2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gal-grid .gal-item:nth-child(1){grid-row:span 2}
+.gal-grid .gal-item:nth-child(4){grid-row:span 2}
+.gal-grid .gal-item:nth-child(7){grid-column:span 2}
+.gal-grid .gal-item:nth-child(10){grid-row:span 2}
+.gal-grid .gal-item:nth-child(13){grid-column:span 2}
+.gal-item{position:relative;border-radius:16px;overflow:hidden;cursor:pointer}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.8),transparent 60%);opacity:0;transition:opacity .3s var(--ease);display:flex;align-items:flex-end;padding:20px}
+.gal-item:hover .gal-over{opacity:1}
+.gal-over span{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--white)}
+.gal-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.6);opacity:0;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease)}
+.gal-item:hover .gal-zoom{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.gal-zoom svg{width:22px;height:22px;color:var(--white)}
+
+/* ===== VIDEO CAROUSEL ===== */
+.vid-section{padding:120px 0;background:var(--navy-dark);position:relative;overflow:hidden;clip-path:polygon(0 40px,100% 0,100% calc(100% - 40px),0 100%);margin:-1px 0}
+.vid-section::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(245,166,35,.05);left:-200px;bottom:-200px}
+.vid-head{text-align:center;margin-bottom:48px}
+.vid-head .label{color:var(--gold)}
+.vid-head h2{font-size:clamp(32px,4.5vw,52px);color:var(--white);margin-top:16px;letter-spacing:-.02em}
+.vid-head p{color:rgba(255,255,255,.5);font-size:17px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.vid-wrap{position:relative;max-width:1320px;margin:0 auto}
+.vid-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 32px 8px;scrollbar-width:none;scroll-behavior:smooth}
+.vid-carousel::-webkit-scrollbar{display:none}
+.vid-slide{flex:0 0 calc(33.333% - 14px);scroll-snap-align:center;position:relative;border-radius:20px;overflow:hidden;background:#000;aspect-ratio:9/16}
+.vid-slide video{width:100%;height:100%;object-fit:cover;display:block}
+.vid-slide::after{content:'';position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.08);pointer-events:none;z-index:1}
+.vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;opacity:0;transition:opacity .3s var(--ease)}
+.vid-slide.paused .vid-play{opacity:1}
+.vid-play svg{width:28px;height:28px;color:var(--white);margin-left:3px}
+.vid-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;padding:0 32px}
+.vid-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s var(--ease);border:none;padding:0}
+.vid-dot.on{background:var(--orange);width:32px;border-radius:8px}
+.vid-arrows{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;padding:0 8px;transform:translateY(-50%);pointer-events:none;z-index:3}
+.vid-arrow{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s var(--ease);pointer-events:all;border:1px solid rgba(255,255,255,.1)}
+.vid-arrow:hover{background:rgba(255,255,255,.2);transform:scale(1.08)}
+.vid-arrow svg{width:22px;height:22px;color:var(--white)}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials{padding:120px 0;background:var(--cream);position:relative;overflow:hidden}
+.testimonials .deco-quote{position:absolute;top:60px;right:80px;font-family:'Outfit',sans-serif;font-size:300px;font-weight:900;color:rgba(245,166,35,.06);line-height:1;pointer-events:none;user-select:none}
+.test-head{margin-bottom:64px}
+.test-head .label{color:var(--orange)}
+.test-head h2{font-size:clamp(32px,4.5vw,52px);color:var(--navy);margin-top:16px;letter-spacing:-.02em}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test-card{background:var(--white);border-radius:20px;padding:40px 32px;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.04);transition:all .4s var(--ease);position:relative}
+.test-card::before{content:'';position:absolute;top:0;left:32px;right:32px;height:3px;background:var(--grad-brand);border-radius:0 0 4px 4px;transform:scaleX(0);transition:transform .4s var(--ease)}
+.test-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-strong)}
+.test-card:hover::before{transform:scaleX(1)}
+.test-stars{display:flex;gap:3px;margin-bottom:20px}
+.test-stars svg{width:18px;height:18px;color:var(--gold)}
+.test-quote-icon{color:var(--orange);opacity:.2;margin-bottom:12px}
+.test-quote-icon svg{width:36px;height:36px}
+.test-text{font-size:15px;color:var(--text-body);line-height:1.85;font-style:italic;margin-bottom:28px}
+.test-author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid #f0f0f0}
+.test-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:17px;font-weight:800}
+.test-name{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--navy)}
+.test-role{font-size:13px;color:var(--text-light);margin-top:2px}
+
+/* ===== PROCESS ===== */
+.process{padding:120px 0;background:var(--white);position:relative}
+.process-head{text-align:center;margin-bottom:80px}
+.process-head .label{color:var(--orange)}
+.process-head h2{font-size:clamp(32px,4.5vw,52px);color:var(--navy);margin-top:16px;letter-spacing:-.02em}
+.process-head p{color:var(--text-body);font-size:17px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.proc-line{position:absolute;top:60px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--orange) 0,var(--orange) 8px,transparent 8px,transparent 16px);z-index:0}
+.proc-step{text-align:center;position:relative;z-index:1}
+.proc-circle{width:120px;height:120px;border-radius:50%;background:var(--white);border:2px solid #e8ecf2;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;transition:all .4s var(--ease);position:relative}
+.proc-circle::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px dashed rgba(245,166,35,.2);transition:all .4s var(--ease)}
+.proc-step:hover .proc-circle{border-color:var(--orange);box-shadow:0 0 0 12px rgba(245,166,35,.06)}
+.proc-step:hover .proc-circle::before{border-color:var(--orange);transform:rotate(45deg)}
+.proc-inner{width:80px;height:80px;border-radius:50%;background:var(--off-white);display:flex;align-items:center;justify-content:center;transition:all .4s var(--ease)}
+.proc-step:hover .proc-inner{background:var(--grad-brand)}
+.proc-inner svg{width:34px;height:34px;color:var(--navy);transition:all .3s var(--ease)}
+.proc-step:hover .proc-inner svg{color:var(--navy-dark);transform:scale(1.1)}
+.proc-num{font-family:'Outfit',sans-serif;font-size:12px;font-weight:800;color:var(--orange);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.proc-step h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.proc-step p{font-size:14px;color:var(--text-body);line-height:1.65;max-width:220px;margin:0 auto}
+
+/* ===== CTA ===== */
+.cta-section{padding:100px 0;background:var(--grad-brand);position:relative;overflow:hidden;clip-path:polygon(0 30px,100% 0,100% 100%,0 100%)}
+.cta-section::before,.cta-section::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+.cta-section::before{width:350px;height:350px;top:-100px;right:-80px}
+.cta-section::after{width:250px;height:250px;bottom:-100px;left:-60px}
+.cta-section .container{position:relative;z-index:2;text-align:center}
+.cta-section h2{font-size:clamp(36px,5.5vw,64px);color:var(--navy-dark);letter-spacing:-.03em;margin-bottom:16px}
+.cta-section>div p{font-size:clamp(16px,2vw,20px);color:rgba(15,33,55,.6);margin-bottom:36px}
+.cta-phone{font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--navy-dark);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px;transition:all .3s var(--ease)}
+.cta-phone:hover{transform:scale(1.04)}
+.cta-phone svg{width:clamp(28px,4vw,48px);height:clamp(28px,4vw,48px)}
+.cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--navy-dark);padding:80px 0 0;color:rgba(255,255,255,.6)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-brand p{font-size:15px;line-height:1.85;margin-top:20px;max-width:300px}
+.foot-brand img{height:60px;width:auto;object-fit:contain}
+.footer h4{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:24px;padding-bottom:12px;position:relative}
+.footer h4::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--grad-brand)}
+.footer li{margin-bottom:12px}
+.footer li a{font-size:14px;transition:all .25s var(--ease)}
+.footer li a:hover{color:var(--orange);padding-left:4px}
+.foot-contact div{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:14px}
+.foot-contact svg{width:18px;height:18px;min-width:18px;color:var(--orange);margin-top:2px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-size:12px;color:rgba(255,255,255,.35)}
+
+/* ===== LIGHTBOX ===== */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.on{opacity:1;pointer-events:all}
+.lb img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px;transform:scale(.92);transition:transform .3s var(--ease)}
+.lb.on img{transform:scale(1)}
+.lb-close,.lb-nav{position:absolute;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s}
+.lb-close:hover,.lb-nav:hover{background:rgba(255,255,255,.2)}
+.lb-close{top:20px;right:20px}
+.lb-close svg,.lb-nav svg{width:24px;height:24px;color:var(--white)}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:'Outfit',sans-serif;font-size:14px;color:rgba(255,255,255,.5)}
+
+/* ===== ANIMATIONS ===== */
+.rv{opacity:0;transform:translateY(50px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv-l{opacity:0;transform:translateX(-50px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv-l.vis{opacity:1;transform:translateX(0)}
+.rv-r{opacity:0;transform:translateX(50px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv-r.vis{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.35s}.d5{transition-delay:.45s}.d6{transition-delay:.55s}
+@keyframes fadeIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.rv,.rv-l,.rv-r{opacity:1;transform:none;transition:none}
+.marquee-track{animation:none}.hero-bg .orb{animation:none}.hero-dot{animation:none}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .hero-photos{display:none}
+  .hero-bottom{grid-template-columns:1fr}
+  .about .container{grid-template-columns:1fr;gap:60px}
+  .about-visual{max-width:480px;margin:0 auto}
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:200px}
+  .gal-grid .gal-item:nth-child(7){grid-column:auto}
+  .gal-grid .gal-item:nth-child(13){grid-column:auto}
+  .test-grid{grid-template-columns:1fr 1fr}
+  .vid-slide{flex:0 0 calc(50% - 10px)}
+  .proc-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .proc-line{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2)::after{display:none}
+}
+@media(max-width:768px){
+  nav,.h-phone{display:none}
+  .burger{display:block}
+  .container{padding:0 24px}
+
+  /* — HERO mobile — */
+  .hero{min-height:100vh;min-height:100dvh}
+  .hero .container{padding-top:110px;padding-bottom:32px;display:flex;flex-direction:column;justify-content:center;min-height:100vh;min-height:100dvh}
+  .hero-top{margin-bottom:24px}
+  .hero-dot{width:8px;height:8px}
+  .hero-tag{font-size:11px;letter-spacing:2.5px}
+  .hero-headline{margin-bottom:20px}
+  .hero-headline h1{font-size:clamp(38px,10vw,52px);line-height:1.08;letter-spacing:-.03em}
+  .hero-headline .stroke{display:none}
+  .hero-sub{display:block;font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;margin-bottom:24px;max-width:100%;color:rgba(255,255,255,.9);line-height:1.3;letter-spacing:.3px;text-align:center}
+  .hero-sub .highlight{color:var(--orange)}
+  .hero-actions{gap:12px;margin-bottom:0;margin-top:0;padding-top:40px}
+  .hero-actions .btn-glow{padding:18px 32px;font-size:16px;width:100%;justify-content:center}
+  .hero-actions .btn-glass{display:none}
+  .hero-bottom{display:block;margin-top:auto}
+  .hero-badges{display:none}
+  .hero-photos{display:flex!important;justify-content:center;align-items:flex-end;gap:0}
+  .hero-photo{box-shadow:0 12px 32px rgba(0,0,0,.5);border:2px solid rgba(255,255,255,.12)}
+  .hero-photo:nth-child(1){width:130px;height:185px;border-radius:14px;transform:rotate(-5deg) translateX(16px);z-index:1}
+  .hero-photo:nth-child(2){width:155px;height:220px;border-radius:16px;z-index:3;box-shadow:0 16px 40px rgba(0,0,0,.6)}
+  .hero-photo:nth-child(3){width:130px;height:175px;border-radius:14px;transform:rotate(5deg) translateX(-16px);z-index:2}
+
+  /* — MARQUEE mobile — */
+  .marquee{padding:14px 0}
+  .marquee-item{font-size:13px;letter-spacing:1px;padding:0 16px;gap:16px}
+
+  /* — STATS mobile — */
+  .stats{padding:0 24px;margin-top:0}
+  .stats-bar{grid-template-columns:1fr 1fr;border-radius:20px;box-shadow:0 8px 30px rgba(15,33,55,.08)}
+  .stat{padding:28px 16px}
+  .stat::after{display:none!important}
+  .stat-num{font-size:32px}
+  .stat-text{font-size:11px;letter-spacing:.3px}
+
+  /* — ABOUT mobile — */
+  .about{padding:80px 0 70px}
+  .about .container{gap:48px}
+  .about-visual{max-width:100%}
+  .about-img-1{aspect-ratio:4/3;border-radius:20px}
+  .about-img-2{position:static;width:100%;margin-top:12px;border:none;border-radius:16px;aspect-ratio:16/9}
+  .about-accent{top:12px;left:12px}
+  .about-accent-num{font-size:38px}
+  .about-accent-inner{padding:16px 22px;border-radius:14px}
+  .about-content h2{font-size:28px;margin-bottom:20px}
+  .about-content p{font-size:15px;line-height:1.75;margin-bottom:16px}
+  .about-pills{gap:10px;margin:24px 0 32px}
+  .about-pill{padding:10px 18px;font-size:13px}
+  .about-content .btn{width:100%;justify-content:center}
+
+  /* — SERVICES mobile — */
+  .services{padding:80px 0;clip-path:polygon(0 20px,100% 0,100% calc(100% - 20px),0 100%)}
+  .services .container{padding-top:24px;padding-bottom:24px}
+  .services-head{margin-bottom:36px}
+  .services-head h2{font-size:28px}
+  .services-head p{font-size:15px;margin-top:12px}
+  .srv-grid{grid-template-columns:1fr;gap:16px}
+  .srv-card{aspect-ratio:5/4;border-radius:16px}
+  .srv-overlay{padding:24px}
+  .srv-card p{max-height:80px;opacity:1;margin-top:4px}
+  .srv-card h3{font-size:20px}
+  .srv-icon{width:44px;height:44px;border-radius:12px;margin-bottom:14px}
+  .srv-icon svg{width:22px;height:22px}
+
+  /* — GALLERY mobile — */
+  .gallery{padding:80px 0}
+  .gallery-head{margin-bottom:32px}
+  .gallery-head h2{font-size:28px}
+  .gallery-head p{font-size:15px}
+  .gal-filters{margin-bottom:24px;gap:6px}
+  .gal-f{padding:9px 20px;font-size:13px}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:10px}
+  .gal-grid .gal-item:nth-child(1),.gal-grid .gal-item:nth-child(4),.gal-grid .gal-item:nth-child(10){grid-row:auto}
+  .gal-grid .gal-item:nth-child(7),.gal-grid .gal-item:nth-child(13){grid-column:auto}
+  .gal-grid .gal-item:nth-child(odd){aspect-ratio:3/4}
+  .gal-grid .gal-item:nth-child(even){aspect-ratio:2/3}
+  .gal-grid .gal-item:nth-child(3){grid-column:span 2;aspect-ratio:16/9}
+  .gal-grid .gal-item:nth-child(8){grid-column:span 2;aspect-ratio:16/9}
+  .gal-item{border-radius:14px}
+  .gal-over{opacity:1;background:linear-gradient(to top,rgba(10,22,40,.65),transparent 45%);padding:14px}
+  .gal-over span{font-size:12px;font-weight:600}
+  .gal-zoom{display:none}
+
+  /* — VIDEO mobile — */
+  .vid-section{padding:80px 0;clip-path:polygon(0 20px,100% 0,100% calc(100% - 20px),0 100%)}
+  .vid-head{margin-bottom:32px}
+  .vid-head h2{font-size:28px}
+  .vid-head p{font-size:15px}
+  .vid-carousel{gap:14px;padding:0 24px 8px}
+  .vid-slide{flex:0 0 72vw;border-radius:16px}
+  .vid-slide::after{border-radius:16px}
+  .vid-arrows{padding:0 4px}
+  .vid-arrow{width:38px;height:38px;background:rgba(255,255,255,.12)}
+  .vid-arrow svg{width:18px;height:18px}
+  .vid-dots{margin-top:20px}
+
+  /* — TESTIMONIALS mobile — */
+  .testimonials{padding:80px 0}
+  .testimonials .deco-quote{font-size:180px;top:20px;right:20px}
+  .test-head{margin-bottom:36px}
+  .test-head h2{font-size:28px}
+  .test-grid{grid-template-columns:1fr;gap:16px}
+  .test-card{padding:28px 24px;border-radius:16px}
+  .test-text{font-size:14px;line-height:1.8;margin-bottom:20px}
+  .test-author{padding-top:16px}
+
+  /* — PROCESS mobile — */
+  .process{padding:80px 0}
+  .process-head{margin-bottom:48px}
+  .process-head h2{font-size:28px}
+  .process-head p{font-size:15px}
+  .proc-grid{grid-template-columns:1fr;gap:40px}
+  .proc-line{display:none}
+  .proc-circle{width:100px;height:100px;margin-bottom:20px}
+  .proc-inner{width:68px;height:68px}
+  .proc-inner svg{width:28px;height:28px}
+  .proc-step h3{font-size:18px}
+  .proc-step p{font-size:13px;max-width:280px}
+
+  /* — CTA mobile — */
+  .cta-section{padding:70px 0;clip-path:polygon(0 16px,100% 0,100% 100%,0 100%)}
+  .cta-section h2{font-size:30px}
+  .cta-section>div p{font-size:16px;margin-bottom:24px}
+  .cta-phone{font-size:28px;flex-direction:column;gap:6px}
+  .cta-phone svg{width:28px;height:28px}
+  .cta-btns{flex-direction:column;gap:12px}
+  .cta-btns .btn{width:100%;justify-content:center}
+
+  /* — FOOTER mobile — */
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  .footer{padding:60px 0 0}
+  .footer h4{font-size:15px;margin-bottom:18px}
+  .footer li a{font-size:13px}
+  .foot-contact div{font-size:13px}
+  .foot-bottom{flex-direction:column;gap:8px;text-align:center;font-size:11px}
+
+  /* — LIGHTBOX mobile — */
+  .lb-close{top:12px;right:12px;width:40px;height:40px}
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+  .lb-nav{width:40px;height:40px}
+  .lb-nav svg,.lb-close svg{width:20px;height:20px}
+}
+@media(max-width:420px){
+  .container{padding:0 16px}
+  .hero-headline h1{font-size:32px}
+  .hero-actions .btn-glow{padding:16px 24px;font-size:15px}
+  .gal-grid{gap:8px}
+  .stat-num{font-size:28px}
+  .stat{padding:22px 12px}
+  .srv-card{aspect-ratio:4/3}
+  .about-content h2{font-size:26px}
+  .cta-phone{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="hdr">
+  <div class="container">
+    <a href="#hero" class="logo"><img src="ASETS/IMG/LOGO.jpeg" alt="P&S Electric Services"></a>
+    <nav>
+      <a href="#hero" data-i18n="nav_home">Home</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="#testimonials" data-i18n="nav_reviews">Reviews</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+    </nav>
+    <div class="h-right">
+      <a href="tel:+18325550123" class="h-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        (832) 555-0123
+      </a>
+      <div class="lang">
+        <button class="lang-btn on" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer-bg" id="drawBg"></div>
+<div class="drawer" id="draw">
+  <div class="drawer-top">
+    <img src="ASETS/IMG/LOGO.jpeg" alt="P&S Electric Services">
+    <div class="lang">
+      <button class="lang-btn on" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+  </div>
+  <div class="drawer-links">
+    <a href="#hero" class="dl" data-i18n="nav_home">Home</a>
+    <a href="#about" class="dl" data-i18n="nav_about">About</a>
+    <a href="#services" class="dl" data-i18n="nav_services">Services</a>
+    <a href="#gallery" class="dl" data-i18n="nav_gallery">Gallery</a>
+    <a href="#testimonials" class="dl" data-i18n="nav_reviews">Reviews</a>
+    <a href="#process" class="dl" data-i18n="nav_process">Process</a>
+  </div>
+  <div class="drawer-bottom">
+    <a href="tel:+18325550123" class="drawer-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      (832) 555-0123
+    </a>
+    <a href="https://wa.me/18325550123?text=Hi%2C%20I%20need%20electrical%2FHVAC%20services" target="_blank" rel="noopener" class="drawer-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <video class="hero-vid" autoplay muted loop playsinline preload="auto">
+      <source src="video/12298312-hd_1920_1080_24fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-mesh"></div>
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    <div class="hero-grid-bg"></div>
+  </div>
+  <div class="container">
+    <div class="hero-top">
+      <div class="hero-dot"></div>
+      <span class="hero-tag" data-i18n="hero_tag">Licensed &bull; Insured &bull; Houston TX</span>
+    </div>
+    <div class="hero-headline">
+      <h1 data-i18n="hero_h1">Expert Electrical<br>& <span class="highlight">HVAC</span> Services</h1>
+      <h1 class="stroke" data-i18n="hero_stroke">That Houston Trusts</h1>
+    </div>
+    <p class="hero-sub" data-i18n="hero_sub">Houston's <span class="highlight">#1</span> Rated Electrical & HVAC Team</p>
+    <div class="hero-actions">
+      <a href="tel:+18325550123" class="btn btn-glow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="btn_call">Call Now</span>
+      </a>
+      <a href="#services" class="btn btn-glass">
+        <span data-i18n="btn_services">Our Services</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+      </a>
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-badges">
+        <div class="hero-badge-item">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+          <div class="hero-badge-text"><strong>Licensed & Bonded</strong>Texas State Certified</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="hero-badge-text"><strong>24/7 Emergency</strong>Always Available</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+          <div class="hero-badge-text"><strong>Bilingual Team</strong>English & Spanish</div>
+        </div>
+      </div>
+      <div class="hero-photos">
+        <div class="hero-photo"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470087807.png" alt="AC units installation" loading="eager"></div>
+        <div class="hero-photo"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470126742.png" alt="Kitchen remodel" loading="eager"></div>
+        <div class="hero-photo"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470120798.png" alt="Exterior AC install" loading="eager"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track" aria-hidden="true">
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Electrical Panels</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Wiring & Rewiring</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>HVAC Installation</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>AC Repair</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Lighting Solutions</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Commercial Services</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>24/7 Emergency</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Free Estimates</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Electrical Panels</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Wiring & Rewiring</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>HVAC Installation</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>AC Repair</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Lighting Solutions</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Commercial Services</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>24/7 Emergency</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Free Estimates</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-bar">
+    <div class="stat rv d1">
+      <div class="stat-num" data-target="15"><span class="plus">+</span></div>
+      <div class="stat-text" data-i18n="stat_1">Years Experience</div>
+    </div>
+    <div class="stat rv d2">
+      <div class="stat-num" data-target="2500"><span class="plus">+</span></div>
+      <div class="stat-text" data-i18n="stat_2">Projects Done</div>
+    </div>
+    <div class="stat rv d3">
+      <div class="stat-num" data-target="1800"><span class="plus">+</span></div>
+      <div class="stat-text" data-i18n="stat_3">Happy Clients</div>
+    </div>
+    <div class="stat rv d4">
+      <div class="stat-num">24<span class="plus">/</span>7</div>
+      <div class="stat-text" data-i18n="stat_4">Emergency Service</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-deco"></div>
+  <div class="container">
+    <div class="about-visual rv-l">
+      <div class="about-accent">
+        <div class="about-accent-inner">
+          <div class="about-accent-num">15+</div>
+          <div class="about-accent-label">Years</div>
+        </div>
+      </div>
+      <div class="about-img-1">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470114977.png" alt="Professional electrical panel" loading="lazy">
+      </div>
+      <div class="about-img-2">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470087807.png" alt="HVAC units installed" loading="lazy">
+      </div>
+    </div>
+    <div class="about-content rv-r">
+      <div class="label" data-i18n="about_label">About P&S</div>
+      <h2 data-i18n="about_title">Houston's Most Trusted Electrical & HVAC Team</h2>
+      <p data-i18n="about_p1">We're more than electricians — we're your neighbors. As a family-owned business proudly serving the Greater Houston area, we bring dedication, expertise, and honest work to every project. Whether it's a simple outlet repair or a full commercial installation, we treat every job like it's our own home.</p>
+      <p data-i18n="about_p2">Our bilingual team ensures clear communication from start to finish. Fully licensed, bonded, and insured — complete peace of mind, every time.</p>
+      <div class="about-pills">
+        <div class="about-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-i18n="about_pill1">Licensed & Insured</span>
+        </div>
+        <div class="about-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="about_pill2">24/7 Availability</span>
+        </div>
+        <div class="about-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span data-i18n="about_pill3">Family Owned</span>
+        </div>
+        <div class="about-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span data-i18n="about_pill4">Bilingual Team</span>
+        </div>
+      </div>
+      <a href="#services" class="btn btn-navy">
+        <span data-i18n="about_btn">Explore Our Services</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <div class="label" data-i18n="srv_label">What We Do</div>
+      <h2 class="rv" data-i18n="srv_title">Professional Services</h2>
+      <p class="rv" data-i18n="srv_sub">From residential fixes to large-scale commercial projects — reliable solutions tailored to your needs.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card rv d1">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470098027.png" alt="Electrical panel wiring" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="12" y2="7"/><line x1="8" y1="11" x2="12" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/><circle cx="15" cy="7" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1"/></svg></div>
+          <h3 data-i18n="srv1_t">Panel Upgrades</h3>
+          <p data-i18n="srv1_p">100A to 400A panel installations for residential and commercial properties. Modern, safe electrical systems.</p>
+          <div class="srv-tag">Electrical</div>
+        </div>
+      </div>
+      <div class="srv-card rv d2">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470060811.png" alt="Service entrance wiring" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-4 3-9 8-9s8 5 8 9"/><path d="M12 3v18"/><circle cx="12" cy="12" r="3"/><path d="M8 8l2 2"/><path d="M14 14l2 2"/></svg></div>
+          <h3 data-i18n="srv2_t">Wiring & Rewiring</h3>
+          <p data-i18n="srv2_p">New construction wiring, home rewiring, and circuits. Meeting all current codes and safety standards.</p>
+          <div class="srv-tag">Electrical</div>
+        </div>
+      </div>
+      <div class="srv-card rv d3">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470071269.png" alt="HVAC furnace installation" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+          <h3 data-i18n="srv3_t">HVAC Installation</h3>
+          <p data-i18n="srv3_p">Complete heating, ventilation & AC systems. Working with Carrier, Trane, and top brands.</p>
+          <div class="srv-tag">HVAC</div>
+        </div>
+      </div>
+      <div class="srv-card rv d4">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470087807.png" alt="Outdoor AC units" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.64 5.64l12.72 12.72M18.36 5.64L5.64 18.36"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3 data-i18n="srv4_t">AC Repair</h3>
+          <p data-i18n="srv4_p">Beat the Houston heat. Emergency fixes to seasonal maintenance — peak cooling performance guaranteed.</p>
+          <div class="srv-tag">AC</div>
+        </div>
+      </div>
+      <div class="srv-card rv d5">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470126742.png" alt="Kitchen lighting" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5C8.26 12.26 8.73 13.02 8.91 14"/></svg></div>
+          <h3 data-i18n="srv5_t">Lighting Solutions</h3>
+          <p data-i18n="srv5_p">Indoor and outdoor lighting design. Recessed LED, landscape illumination, smart controls.</p>
+          <div class="srv-tag">Electrical</div>
+        </div>
+      </div>
+      <div class="srv-card rv d6">
+        <img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470052136.png" alt="Commercial meter bank" loading="lazy">
+        <div class="srv-overlay">
+          <div class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="2" y="10" width="5" height="11" rx="1"/><line x1="9" y1="8" x2="13" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><rect x="10" y="16" width="4" height="5"/></svg></div>
+          <h3 data-i18n="srv6_t">Commercial Services</h3>
+          <p data-i18n="srv6_p">Full-scale commercial electrical and HVAC. Meter banks, multi-unit installs, office build-outs.</p>
+          <div class="srv-tag">Commercial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-head">
+      <div class="label" data-i18n="gal_label">Our Work</div>
+      <h2 class="rv" data-i18n="gal_title">Project Gallery</h2>
+      <p class="rv" data-i18n="gal_sub">Real projects. Real craftsmanship. See what we do across Houston.</p>
+    </div>
+    <div class="gal-filters rv">
+      <button class="gal-f on" data-filter="all" data-i18n="gal_all">All Projects</button>
+      <button class="gal-f" data-filter="electrical" data-i18n="gal_elec">Electrical</button>
+      <button class="gal-f" data-filter="hvac" data-i18n="gal_hvac">HVAC</button>
+      <button class="gal-f" data-filter="ac" data-i18n="gal_ac">AC</button>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470052136.png" alt="Commercial meter bank" loading="lazy"><div class="gal-over"><span>Commercial Meter Bank</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470060811.png" alt="Service entrance wiring" loading="lazy"><div class="gal-over"><span>Service Entrance</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470066424.png" alt="Safety disconnect switch" loading="lazy"><div class="gal-over"><span>Safety Switch</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="hvac"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470071269.png" alt="Carrier furnace" loading="lazy"><div class="gal-over"><span>Carrier Furnace</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470075969.png" alt="Multi-unit meters" loading="lazy"><div class="gal-over"><span>Multi-Unit Meters</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470081074.png" alt="Disconnect wiring" loading="lazy"><div class="gal-over"><span>Disconnect Wiring</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="ac"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470087807.png" alt="AC condenser units" loading="lazy"><div class="gal-over"><span>AC Condensers</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470092120.png" alt="Commercial meters" loading="lazy"><div class="gal-over"><span>Commercial Meters</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470098027.png" alt="Panel interior" loading="lazy"><div class="gal-over"><span>Panel Wiring</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="hvac"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470103778.png" alt="Ductwork installation" loading="lazy"><div class="gal-over"><span>Ductwork Install</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="hvac"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470110035.png" alt="HVAC attic install" loading="lazy"><div class="gal-over"><span>HVAC Attic Install</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470114977.png" alt="Main breaker panel" loading="lazy"><div class="gal-over"><span>Breaker Panel</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="ac"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470120798.png" alt="AC and meter install" loading="lazy"><div class="gal-over"><span>AC & Meters</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item rv" data-cat="electrical"><img src="ASETS/IMG/Enhance_the_vibrancy_and_color_saturation_of_this_-1779470126742.png" alt="Kitchen remodel" loading="lazy"><div class="gal-over"><span>Kitchen Remodel</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="vid-section" id="videos">
+  <div class="container">
+    <div class="vid-head">
+      <div class="label" data-i18n="vid_label">In The Field</div>
+      <h2 class="rv" data-i18n="vid_title">Our Work in Motion</h2>
+      <p class="rv" data-i18n="vid_sub">Real footage from our projects across Greater Houston.</p>
+    </div>
+  </div>
+  <div class="vid-wrap">
+    <div class="vid-carousel" id="vidCarousel">
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.32.26 PM (1).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.35.36 PM (1).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.38.01 PM (1).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.42.03 PM (1) (1).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.42.03 PM (2).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vid-slide paused"><video muted loop playsinline preload="metadata"><source src="video/WhatsApp Video 2026-05-21 at 9.43.06 PM (1) (2).mp4" type="video/mp4"></video><div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+    </div>
+    <div class="vid-arrows">
+      <button class="vid-arrow" id="vidPrev" aria-label="Previous video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="vid-arrow" id="vidNext" aria-label="Next video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+  </div>
+  <div class="vid-dots" id="vidDots"></div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="deco-quote">&ldquo;</div>
+  <div class="container">
+    <div class="test-head">
+      <div class="label" data-i18n="test_label">Testimonials</div>
+      <h2 class="rv" data-i18n="test_title">What Our Clients Say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card rv d1">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg></div>
+        <p class="test-text">P&S completely upgraded our electrical panel and rewired our 1970s home. The team was incredibly professional, explained everything clearly, and finished ahead of schedule. We finally feel safe in our home!</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,#F5A623,#FFD700);color:#0F2137">MG</div>
+          <div><div class="test-name">Maria G.</div><div class="test-role">Homeowner — Katy, TX</div></div>
+        </div>
+      </div>
+      <div class="test-card rv d2">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg></div>
+        <p class="test-text">We manage 12 apartment units and P&S handles all our electrical and AC needs. They installed new meter banks and HVAC systems for the entire complex. Reliable, fair pricing, and always available.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,#1B3A5C,#2A5580);color:#FFD700">JT</div>
+          <div><div class="test-name">James T.</div><div class="test-role">Property Manager — Houston, TX</div></div>
+        </div>
+      </div>
+      <div class="test-card rv d3">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="test-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg></div>
+        <p class="test-text">Our AC went out during a July heatwave and P&S came out the same day. Not only did they fix the issue quickly, but they also found a wiring problem that could have been dangerous. These guys genuinely care.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,#E8941A,#F5A623);color:#0F2137">RK</div>
+          <div><div class="test-name">Robert K.</div><div class="test-role">Homeowner — Sugar Land, TX</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head">
+      <div class="label" data-i18n="proc_label">How It Works</div>
+      <h2 class="rv" data-i18n="proc_title">4 Simple Steps</h2>
+      <p class="rv" data-i18n="proc_sub">Professional service from first call to final inspection.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-line"></div>
+      <div class="proc-step rv d1">
+        <div class="proc-circle"><div class="proc-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div></div>
+        <div class="proc-num">Step 01</div>
+        <h3 data-i18n="proc1_t">Contact Us</h3>
+        <p data-i18n="proc1_p">Call or text — we respond fast, even on weekends and holidays.</p>
+      </div>
+      <div class="proc-step rv d2">
+        <div class="proc-circle"><div class="proc-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div></div>
+        <div class="proc-num">Step 02</div>
+        <h3 data-i18n="proc2_t">Free Assessment</h3>
+        <p data-i18n="proc2_p">We inspect your property and evaluate the situation at no cost.</p>
+      </div>
+      <div class="proc-step rv d3">
+        <div class="proc-circle"><div class="proc-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div></div>
+        <div class="proc-num">Step 03</div>
+        <h3 data-i18n="proc3_t">Get Your Quote</h3>
+        <p data-i18n="proc3_p">Clear, honest pricing — no hidden fees, no surprises.</p>
+      </div>
+      <div class="proc-step rv d4">
+        <div class="proc-circle"><div class="proc-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div></div>
+        <div class="proc-num">Step 04</div>
+        <h3 data-i18n="proc4_t">We Get to Work</h3>
+        <p data-i18n="proc4_p">On time, on budget, done right. Satisfaction guaranteed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="rv" data-i18n="cta_title">Ready to Power Up?</h2>
+    <p class="rv" data-i18n="cta_sub">Emergency or planned upgrade — we're one call away.</p>
+    <a href="tel:+18325550123" class="cta-phone rv">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      (832) 555-0123
+    </a>
+    <div class="cta-btns rv">
+      <a href="tel:+18325550123" class="btn btn-navy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="btn_call">Call Now</span>
+      </a>
+      <a href="https://wa.me/18325550123?text=Hi%2C%20I%20need%20electrical%2FHVAC%20services" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="ASETS/IMG/LOGO.jpeg" alt="P&S Electric Services">
+        <p data-i18n="foot_brand">Proudly serving the Greater Houston area with expert electrical and HVAC services. Licensed, insured, and committed to your comfort and safety.</p>
+      </div>
+      <div>
+        <h4 data-i18n="foot_links">Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#process">Process</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot_services">Services</h4>
+        <ul>
+          <li><a href="#services">Panel Upgrades</a></li>
+          <li><a href="#services">Wiring & Rewiring</a></li>
+          <li><a href="#services">HVAC Installation</a></li>
+          <li><a href="#services">AC Repair</a></li>
+          <li><a href="#services">Lighting Solutions</a></li>
+          <li><a href="#services">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="foot-contact">
+        <h4 data-i18n="foot_contact">Contact</h4>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+18325550123">(832) 555-0123</a></div>
+
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Greater Houston Area, TX</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon-Sat 7AM-8PM<br>Emergency: 24/7</span></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="foot_copy">&copy; 2026 P&S Electric Services. All rights reserved.</span>
+      <span data-i18n="foot_areas">Houston &bull; Katy &bull; Sugar Land &bull; Pearland &bull; Cypress</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <img id="lbImg" src="" alt="Gallery image">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/18325550123?text=Hi%2C%20I%20need%20electrical%2FHVAC%20services" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>50)},{passive:true});
+
+  var burger=document.getElementById('burger'),draw=document.getElementById('draw'),bg=document.getElementById('drawBg');
+  function toggleDraw(){burger.classList.toggle('on');draw.classList.toggle('on');bg.classList.toggle('on');document.body.style.overflow=draw.classList.contains('on')?'hidden':''}
+  burger.addEventListener('click',toggleDraw);
+  bg.addEventListener('click',toggleDraw);
+  document.querySelectorAll('.dl').forEach(function(a){a.addEventListener('click',function(){if(draw.classList.contains('on'))toggleDraw()})});
+
+  var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(function(el){obs.observe(el)});
+
+  var counters=document.querySelectorAll('.stat-num[data-target]'),counted=false;
+  var cObs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting&&!counted){counted=true;counters.forEach(function(c){
+    var t=+c.dataset.target,dur=2e3,start=null;
+    function ease(x){return 1-Math.pow(1-x,3)}
+    function anim(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1),v=Math.floor(ease(p)*t);
+      c.innerHTML=v.toLocaleString()+'<span class="plus">+</span>';
+      if(p<1)requestAnimationFrame(anim)}
+    requestAnimationFrame(anim)})}})},{threshold:.4});
+  var sb=document.querySelector('.stats-bar');if(sb)cObs.observe(sb);
+
+  var fBtns=document.querySelectorAll('.gal-f'),gItems=document.querySelectorAll('.gal-item');
+  fBtns.forEach(function(b){b.addEventListener('click',function(){
+    fBtns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+    var f=b.dataset.filter;
+    gItems.forEach(function(i){if(f==='all'||i.dataset.cat===f){i.style.display='';i.style.animation='fadeIn .4s ease forwards'}else i.style.display='none'})})});
+
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCount=document.getElementById('lbCount'),imgs=[],ci=0;
+  function vis(){return Array.from(gItems).filter(function(i){return i.style.display!=='none'})}
+  function openLb(i){imgs=vis();ci=i;var s=imgs[ci].querySelector('img');lbImg.src=s.src;lbImg.alt=s.alt;lbCount.textContent=(ci+1)+' / '+imgs.length;lb.classList.add('on');document.body.style.overflow='hidden'}
+  function closeLb(){lb.classList.remove('on');document.body.style.overflow=''}
+  function nav(d){ci=(ci+d+imgs.length)%imgs.length;var s=imgs[ci].querySelector('img');lbImg.style.opacity='0';setTimeout(function(){lbImg.src=s.src;lbImg.alt=s.alt;lbCount.textContent=(ci+1)+' / '+imgs.length;lbImg.style.opacity='1'},120)}
+  gItems.forEach(function(item){item.addEventListener('click',function(){var v=vis();openLb(v.indexOf(item))})});
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  document.getElementById('lbPrev').addEventListener('click',function(){nav(-1)});
+  document.getElementById('lbNext').addEventListener('click',function(){nav(1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')nav(-1);if(e.key==='ArrowRight')nav(1)});
+
+  // Video carousel
+  var vidC=document.getElementById('vidCarousel'),vidSlides=document.querySelectorAll('.vid-slide'),vidDotsC=document.getElementById('vidDots');
+  vidSlides.forEach(function(_,i){var d=document.createElement('button');d.className='vid-dot'+(i===0?' on':'');d.setAttribute('aria-label','Video '+(i+1));vidDotsC.appendChild(d)});
+  var vDots=vidDotsC.querySelectorAll('.vid-dot');
+  function updateVidDots(){
+    var sl=vidSlides[0];if(!sl)return;
+    var w=sl.offsetWidth+parseInt(getComputedStyle(vidC).gap||20);
+    var idx=Math.round(vidC.scrollLeft/w);
+    idx=Math.max(0,Math.min(idx,vidSlides.length-1));
+    vDots.forEach(function(d,i){d.classList.toggle('on',i===idx)});
+  }
+  vidC.addEventListener('scroll',updateVidDots,{passive:true});
+  vDots.forEach(function(d,i){d.addEventListener('click',function(){var w=vidSlides[0].offsetWidth+parseInt(getComputedStyle(vidC).gap||20);vidC.scrollTo({left:w*i,behavior:'smooth'})})});
+  document.getElementById('vidPrev').addEventListener('click',function(){var w=vidSlides[0].offsetWidth+parseInt(getComputedStyle(vidC).gap||20);vidC.scrollBy({left:-w,behavior:'smooth'})});
+  document.getElementById('vidNext').addEventListener('click',function(){var w=vidSlides[0].offsetWidth+parseInt(getComputedStyle(vidC).gap||20);vidC.scrollBy({left:w,behavior:'smooth'})});
+  // Autoplay videos when visible
+  var vidObs=new IntersectionObserver(function(entries){entries.forEach(function(en){var v=en.target.querySelector('video');if(en.isIntersecting){v.play().catch(function(){});en.target.classList.remove('paused')}else{v.pause();en.target.classList.add('paused')}})},{threshold:.5});
+  vidSlides.forEach(function(s){s.addEventListener('click',function(){var v=s.querySelector('video');if(v.paused){v.play().catch(function(){});s.classList.remove('paused')}else{v.pause();s.classList.add('paused')}});vidObs.observe(s)});
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-hdr.offsetHeight,behavior:'smooth'})}})});
+
+  // Language switcher
+  var T={
+    es:{
+      nav_home:'Inicio',nav_about:'Nosotros',nav_services:'Servicios',nav_gallery:'Galería',nav_reviews:'Reseñas',nav_process:'Proceso',
+      hero_tag:'Licenciados &bull; Asegurados &bull; Houston TX',
+      hero_h1:'Electricidad<br>& <span class="highlight">HVAC</span> Experto',
+      hero_stroke:'Houston Confía en Nosotros',
+      hero_sub:'El Equipo Eléctrico y HVAC <span class="highlight">#1</span> de Houston',
+      btn_call:'Llamar Ahora',btn_services:'Nuestros Servicios',
+      stat_1:'Años de Experiencia',stat_2:'Proyectos Realizados',stat_3:'Clientes Felices',stat_4:'Servicio de Emergencia',
+      about_label:'Sobre Nosotros',about_title:'El Equipo Eléctrico y HVAC Más Confiable de Houston',
+      about_p1:'Somos más que electricistas — somos tus vecinos. Como negocio familiar orgullosamente sirviendo el área metropolitana de Houston, traemos dedicación, experiencia y trabajo honesto a cada proyecto. Ya sea una reparación sencilla o una instalación comercial completa, tratamos cada trabajo como si fuera nuestra propia casa.',
+      about_p2:'Nuestro equipo bilingüe asegura comunicación clara de inicio a fin. Completamente licenciados, asegurados y con fianza — tranquilidad total, siempre.',
+      about_pill1:'Licenciados y Asegurados',about_pill2:'Disponibilidad 24/7',about_pill3:'Negocio Familiar',about_pill4:'Equipo Bilingüe',
+      about_btn:'Explorar Servicios',
+      srv_label:'Lo Que Hacemos',srv_title:'Servicios Profesionales',srv_sub:'Desde reparaciones residenciales hasta proyectos comerciales a gran escala — soluciones confiables a tu medida.',
+      srv1_t:'Paneles Eléctricos',srv1_p:'Instalaciones de paneles de 100A a 400A para propiedades residenciales y comerciales. Sistemas eléctricos modernos y seguros.',
+      srv2_t:'Cableado Eléctrico',srv2_p:'Cableado para nuevas construcciones, recableado de casas y circuitos. Cumpliendo todos los códigos y estándares de seguridad.',
+      srv3_t:'Instalación HVAC',srv3_p:'Sistemas completos de calefacción, ventilación y aire acondicionado. Trabajamos con Carrier, Trane y las mejores marcas.',
+      srv4_t:'Reparación de AC',srv4_p:'Vence el calor de Houston. Reparaciones de emergencia a mantenimiento estacional — rendimiento óptimo garantizado.',
+      srv5_t:'Iluminación',srv5_p:'Diseño de iluminación interior y exterior. LED empotrado, iluminación de paisaje, controles inteligentes.',
+      srv6_t:'Servicios Comerciales',srv6_p:'Soluciones eléctricas y HVAC comerciales. Bancos de medidores, instalaciones multi-unidad, oficinas.',
+      gal_label:'Nuestro Trabajo',gal_title:'Galería de Proyectos',gal_sub:'Proyectos reales. Calidad real. Mira lo que hacemos en Houston.',
+      gal_all:'Todos',gal_elec:'Eléctrico',gal_hvac:'HVAC',gal_ac:'AC',
+      vid_label:'En El Campo',vid_title:'Nuestro Trabajo en Acción',vid_sub:'Videos reales de nuestros proyectos en el área de Houston.',
+      test_label:'Testimonios',test_title:'Lo Que Dicen Nuestros Clientes',
+      proc_label:'Cómo Funciona',proc_title:'4 Pasos Simples',proc_sub:'Servicio profesional desde la primera llamada hasta la inspección final.',
+      proc1_t:'Contáctanos',proc1_p:'Llama o envía un mensaje — respondemos rápido, incluso fines de semana y festivos.',
+      proc2_t:'Evaluación Gratis',proc2_p:'Inspeccionamos tu propiedad y evaluamos la situación sin costo.',
+      proc3_t:'Recibe tu Cotización',proc3_p:'Precios claros y honestos — sin cargos ocultos, sin sorpresas.',
+      proc4_t:'Manos a la Obra',proc4_p:'A tiempo, dentro del presupuesto, bien hecho. Satisfacción garantizada.',
+      cta_title:'¿Listo Para Empezar?',cta_sub:'Emergencia o proyecto planeado — estamos a una llamada.',
+      foot_brand:'Sirviendo orgullosamente el área de Houston con servicios eléctricos y HVAC expertos. Licenciados, asegurados y comprometidos con tu comodidad y seguridad.',
+      foot_links:'Enlaces',foot_services:'Servicios',foot_contact:'Contacto',
+      foot_copy:'&copy; 2026 P&S Electric Services. Todos los derechos reservados.',
+      foot_areas:'Houston &bull; Katy &bull; Sugar Land &bull; Pearland &bull; Cypress'
+    },
+    en:{
+      nav_home:'Home',nav_about:'About',nav_services:'Services',nav_gallery:'Gallery',nav_reviews:'Reviews',nav_process:'Process',
+      hero_tag:'Licensed &bull; Insured &bull; Houston TX',
+      hero_h1:'Expert Electrical<br>& <span class="highlight">HVAC</span> Services',
+      hero_stroke:'That Houston Trusts',
+      hero_sub:'Houston\'s <span class="highlight">#1</span> Rated Electrical & HVAC Team',
+      btn_call:'Call Now',btn_services:'Our Services',
+      stat_1:'Years Experience',stat_2:'Projects Done',stat_3:'Happy Clients',stat_4:'Emergency Service',
+      about_label:'About P&S',about_title:'Houston\'s Most Trusted Electrical & HVAC Team',
+      about_p1:'We\'re more than electricians — we\'re your neighbors. As a family-owned business proudly serving the Greater Houston area, we bring dedication, expertise, and honest work to every project. Whether it\'s a simple outlet repair or a full commercial installation, we treat every job like it\'s our own home.',
+      about_p2:'Our bilingual team ensures clear communication from start to finish. Fully licensed, bonded, and insured — complete peace of mind, every time.',
+      about_pill1:'Licensed & Insured',about_pill2:'24/7 Availability',about_pill3:'Family Owned',about_pill4:'Bilingual Team',
+      about_btn:'Explore Our Services',
+      srv_label:'What We Do',srv_title:'Professional Services',srv_sub:'From residential fixes to large-scale commercial projects — reliable solutions tailored to your needs.',
+      srv1_t:'Panel Upgrades',srv1_p:'100A to 400A panel installations for residential and commercial properties. Modern, safe electrical systems.',
+      srv2_t:'Wiring & Rewiring',srv2_p:'New construction wiring, home rewiring, and circuits. Meeting all current codes and safety standards.',
+      srv3_t:'HVAC Installation',srv3_p:'Complete heating, ventilation & AC systems. Working with Carrier, Trane, and top brands.',
+      srv4_t:'AC Repair',srv4_p:'Beat the Houston heat. Emergency fixes to seasonal maintenance — peak cooling performance guaranteed.',
+      srv5_t:'Lighting Solutions',srv5_p:'Indoor and outdoor lighting design. Recessed LED, landscape illumination, smart controls.',
+      srv6_t:'Commercial Services',srv6_p:'Full-scale commercial electrical and HVAC. Meter banks, multi-unit installs, office build-outs.',
+      gal_label:'Our Work',gal_title:'Project Gallery',gal_sub:'Real projects. Real craftsmanship. See what we do across Houston.',
+      gal_all:'All Projects',gal_elec:'Electrical',gal_hvac:'HVAC',gal_ac:'AC',
+      vid_label:'In The Field',vid_title:'Our Work in Motion',vid_sub:'Real footage from our projects across Greater Houston.',
+      test_label:'Testimonials',test_title:'What Our Clients Say',
+      proc_label:'How It Works',proc_title:'4 Simple Steps',proc_sub:'Professional service from first call to final inspection.',
+      proc1_t:'Contact Us',proc1_p:'Call or text — we respond fast, even on weekends and holidays.',
+      proc2_t:'Free Assessment',proc2_p:'We inspect your property and evaluate the situation at no cost.',
+      proc3_t:'Get Your Quote',proc3_p:'Clear, honest pricing — no hidden fees, no surprises.',
+      proc4_t:'We Get to Work',proc4_p:'On time, on budget, done right. Satisfaction guaranteed.',
+      cta_title:'Ready to Power Up?',cta_sub:'Emergency or planned upgrade — we\'re one call away.',
+      foot_brand:'Proudly serving the Greater Houston area with expert electrical and HVAC services. Licensed, insured, and committed to your comfort and safety.',
+      foot_links:'Quick Links',foot_services:'Services',foot_contact:'Contact',
+      foot_copy:'&copy; 2026 P&S Electric Services. All rights reserved.',
+      foot_areas:'Houston &bull; Katy &bull; Sugar Land &bull; Pearland &bull; Cypress'
+    }
+  };
+  var curLang='en';
+  function setLang(lang){
+    curLang=lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key=el.dataset.i18n;
+      if(T[lang][key])el.innerHTML=T[lang][key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.dataset.lang===lang);
+    });
+    // Update WhatsApp links
+    var waMsg=lang==='es'?'Hola%2C%20necesito%20servicios%20el%C3%A9ctricos%2FHVAC':'Hi%2C%20I%20need%20electrical%2FHVAC%20services';
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+      a.href='https://wa.me/18325550123?text='+waMsg;
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.lang)});
+  });
+})();
+</script>
+<style>.lb img{transition:opacity .12s ease}</style>
+</body>
+</html>
